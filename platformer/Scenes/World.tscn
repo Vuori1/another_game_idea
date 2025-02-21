@@ -1,10 +1,27 @@
-[gd_scene load_steps=11 format=4 uid="uid://cgso7v2mkcbwd"]
+[gd_scene load_steps=27 format=4 uid="uid://cgso7v2mkcbwd"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_w8lgr"]
 [ext_resource type="Texture2D" uid="uid://b0xf2i1btc7bf" path="res://Assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="2_0f80r"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_1knc7"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="3_5jdph"]
-[ext_resource type="Texture2D" uid="uid://b4g0w3qdaqevs" path="res://icon.svg" id="4_fjpx2"]
+[ext_resource type="Texture2D" uid="uid://dgfchrgeybsos" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="4_gl371"]
+[ext_resource type="Texture2D" uid="uid://dkua8i0safhql" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="5_v85af"]
+[ext_resource type="Texture2D" uid="uid://cg0y2mdq6g6k7" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="6_731d6"]
+[ext_resource type="Texture2D" uid="uid://do2cu6cy5ouib" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 04.png" id="7_gqkdf"]
+[ext_resource type="Texture2D" uid="uid://usxppwkgyn7n" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 05.png" id="8_rrgpl"]
+[ext_resource type="Texture2D" uid="uid://bjrqm03iiy35r" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 06.png" id="9_stp8t"]
+[ext_resource type="Texture2D" uid="uid://crl7sgbnv2frg" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 07.png" id="10_xidmx"]
+[ext_resource type="Texture2D" uid="uid://mdmt3vijs7jg" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 08.png" id="11_suk7v"]
+[ext_resource type="Texture2D" uid="uid://duso7kxidy5h3" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 09.png" id="12_g4oej"]
+[ext_resource type="Texture2D" uid="uid://b7mhojf14ht1w" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/03-Jump/Jump 01.png" id="13_3let5"]
+[ext_resource type="Texture2D" uid="uid://b0sbx54v026cy" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/03-Jump/Jump 02.png" id="14_d7y5r"]
+[ext_resource type="Texture2D" uid="uid://d3wiebvvnsv2x" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/03-Jump/Jump 03.png" id="15_qfocy"]
+[ext_resource type="Texture2D" uid="uid://ed3j5yslpjks" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 01.png" id="16_7p5gp"]
+[ext_resource type="Texture2D" uid="uid://cxxxgoo2g58dh" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 02.png" id="17_2b20f"]
+[ext_resource type="Texture2D" uid="uid://c7pwlq5ms6j5c" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 03.png" id="18_qsx8y"]
+[ext_resource type="Texture2D" uid="uid://b3bk54t1f54qy" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 04.png" id="19_5l4bi"]
+[ext_resource type="Texture2D" uid="uid://l1vulgd5wxxg" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="20_tkbis"]
+[ext_resource type="Texture2D" uid="uid://dcgwskjiw70up" path="res://Assets/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="21_tkllw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fofek"]
 texture = ExtResource("2_0f80r")
@@ -109,21 +126,79 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_fofek")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_git6g"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6glog"]
-atlas = ExtResource("4_fjpx2")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ro8bd"]
+radius = 9.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_irh6r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6glog")
+"texture": ExtResource("4_gl371")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v85af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_731d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gqkdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rrgpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_stp8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xidmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_suk7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g4oej")
 }],
-"loop": true,
-"name": &"Default",
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_3let5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d7y5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qfocy")
+}],
+"loop": false,
+"name": &"jump",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_7p5gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2b20f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qsx8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5l4bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tkbis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tkllw")
+}],
+"loop": false,
+"name": &"run",
+"speed": 10.0
 }]
 
 [node name="World" type="Node2D"]
@@ -142,13 +217,13 @@ tile_set = SubResource("TileSet_xycfc")
 script = ExtResource("2_1knc7")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="Player/Player"]
-shape = SubResource("RectangleShape2D_git6g")
+shape = SubResource("CircleShape2D_ro8bd")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Player"]
-position = Vector2(5.96046e-08, 0.25)
-scale = Vector2(0.15625, 0.167969)
+[node name="playeranim" type="AnimatedSprite2D" parent="Player/Player"]
+position = Vector2(0, 2.00001)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_irh6r")
-animation = &"Default"
+animation = &"run"
 
 [node name="Camera2D" type="Camera2D" parent="Player/Player"]
 zoom = Vector2(2, 2)

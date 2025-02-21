@@ -7,7 +7,7 @@ const WALL_SLIDE_GRAVITY = 200.0
 const DEATH_Y_THRESHOLD = 800 # Adjust based on your game’s bottom boundary
 @onready var map: TileMapLayer = $"../../Level/Map"
 @onready var death: Label = $Death
-
+@onready var playeranim: AnimatedSprite2D = $playeranim
 @export var respawn_position: Vector2 = Vector2(0, 0) # Set respawn point
 
 func _physics_process(delta: float) -> void:
@@ -22,16 +22,21 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			playeranim.play("jump")
 		elif is_on_wall():
 			var wall_direction = -get_wall_normal().x
 			velocity = Vector2(WALL_JUMP_VELOCITY.x * wall_direction, WALL_JUMP_VELOCITY.y)
+
 
 	# Get movement input
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
+		playeranim.play("run")
+		playeranim.flip_h = direction > 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		playeranim.play("idle")
 
 	# Check if player fell off screen
 	if position.y > DEATH_Y_THRESHOLD:
